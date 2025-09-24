@@ -185,7 +185,7 @@ code {
     width: 100%;
     justify-content: center;
   }
-  /* Stack nav buttons and make them full width on small screens */
+ 
   .header-nav {
     flex-direction: column;
     gap: 0.5rem;
@@ -203,7 +203,6 @@ code {
 }
 
 @media (max-width: 420px) {
-  /* Slightly reduce padding on very small screens */
   .header-nav .nav-link.btn-accent {
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
@@ -376,7 +375,7 @@ code {
   color: black !important;
 }
 
-/* Padronizar borda dos botões: mesma espessura e estilo */
+/* Padroniza a borda dos botões*/
 button,
 .btn,
 .btn-primary,
