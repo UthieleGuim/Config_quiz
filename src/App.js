@@ -23,9 +23,23 @@ function Header({ fontSize, increaseFont, decreaseFont, handleFontSizeChange }) 
     <>
       <header className="header">
         <div className="header-content">
-          <Link to="/" className="logo">📧 Config</Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            {/* Controles de fonte (apenas manipuladores) */}
+          <div className="header-left">
+            <Link to="/" className="logo">📧 Config</Link>
+          </div>
+
+          <div className="header-center">
+            <div className="header-nav" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <NavLink to="/" className={({ isActive }) => `nav-link btn-accent ${isActive ? 'active' : ''}`}>
+                 Início
+              </NavLink>
+              <NavLink to="/exercicios" className={({ isActive }) => `nav-link btn-accent ${isActive ? 'active' : ''}`}>
+                 Exercícios
+              </NavLink>
+            </div>
+          </div>
+
+          {/* Controles de fonte e tema */}
+          <div className="header-right" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <button
                 className="btn btn-secondary btn-sm"
@@ -55,26 +69,13 @@ function Header({ fontSize, increaseFont, decreaseFont, handleFontSizeChange }) 
                 +
               </button>
             </div>
-             
-            {/* Botão de tema */}
             <button className="theme-toggle" onClick={toggleTheme}>
               {theme === 'light' ? '🌙' : '☀️'} {theme === 'light' ? 'Escuro' : 'Claro'}
             </button>
-            
-           
           </div>
         </div>
       </header>
-      <nav className="nav">
-        <div className="nav-content">
-          <NavLink to="/" className={({ isActive }) => `nav-link btn-accent ${isActive ? 'active' : ''}`}>
-            🏠 Início
-          </NavLink>
-          <NavLink to="/exercicios" className={({ isActive }) => `nav-link btn-accent ${isActive ? 'active' : ''}`}>
-            📝 Exercícios
-          </NavLink>
-        </div>
-      </nav>
+      
     </>
   );
 }

@@ -2,9 +2,12 @@
 
 
 URL do repositório:
-# 📧 URl do repositório : 
+# 📧 URL do repositório : 
+https://github.com/UthieleGuim/Config_quiz.git
 
-# 📧 URl  pública :
+
+# 📧 URL  pública :
+https://uthielequizconfig.netlify.app/
 
 # 📧  config
 

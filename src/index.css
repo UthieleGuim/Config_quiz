@@ -108,6 +108,25 @@ code {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  gap: 1rem;
+}
+
+/* Header columns: left / center / right */
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-center {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.header-left {
+  flex: 0 0 auto;
+}
+.header-right {
+  flex: 0 0 auto;
 }
 
 .logo {
@@ -138,6 +157,58 @@ code {
 }
 
 /* Navegação */
+.header-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.header-nav .nav-link.btn-accent {
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* Em telas pequenas, coloque a nav do header em linha normal (sem absolute) para não sobrepor */
+@media (max-width: 720px) {
+  .header-content {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+    text-align: center;
+  }
+  .header-center {
+    order: 2;
+    width: 100%;
+  }
+  .header-left,
+  .header-right {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+  /* Stack nav buttons and make them full width on small screens */
+  .header-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  .header-nav .nav-link.btn-accent {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Slightly reduce padding on very small screens */
+  .header-nav .nav-link.btn-accent {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
 .nav {
   background-color: var(--card-bg);
   border-bottom: 1px solid var(--border-color);
@@ -263,6 +334,21 @@ code {
   background-color: #10b981;
   border-color: #10b981;
 }
+.header-nav .nav-link.btn-accent {
+  display: inline-block;
+  text-decoration: none;
+  color: white; /* garante que o texto seja branco por padrão */
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.header-nav .nav-link.btn-accent:hover {
+  background-color: #10b981;
+  border-color: #10b981;
+}
 
 /* No tema claro, os botões de navegação vão usar o azul primário #1E3A8A com texto branco */
 :root .nav .nav-link.btn-accent,
@@ -271,12 +357,23 @@ code {
   border-color: #1E3A8A;
   color: white;
 }
+:root .header-nav .nav-link.btn-accent,
+.header-nav:not([data-theme]) .nav-link.btn-accent {
+  background-color: #1E3A8A;
+  border-color: #1E3A8A;
+  color: white;
+}
 
 /* Garante que o tema escuro ainda use substituições de cores de destaque */
 [data-theme="dark"] .nav .nav-link.btn-accent {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: white;
+  background-color: #34D399;
+  border-color: #34D399;
+  color: black !important;
+}
+[data-theme="dark"] .header-nav .nav-link.btn-accent {
+  background-color: #34D399;
+  border-color: #34D399;
+  color: black !important;
 }
 
 /* Padronizar borda dos botões: mesma espessura e estilo */
@@ -473,3 +570,5 @@ button,
     padding: 1.5rem;
   }
 }
+
+
