@@ -8,7 +8,7 @@ https://github.com/UthieleGuim/Config_quiz.git
 <<<<<<< HEAD
 
 =======
->>>>>>> 17715a2da9aae32eb39c1f5173f7f9e600ca71ae
+
 # 📧 URL  pública :
 https://uthielequizconfig.netlify.app/
 
