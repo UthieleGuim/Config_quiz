@@ -5,9 +5,7 @@ URL do repositório:
 # 📧 URL do repositório : 
 https://github.com/UthieleGuim/Config_quiz.git
 
-<<<<<<< HEAD
 
-=======
 
 # 📧 URL  pública :
 https://uthielequizconfig.netlify.app/
